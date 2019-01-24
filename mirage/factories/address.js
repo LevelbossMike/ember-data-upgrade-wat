@@ -6,8 +6,12 @@ export default Factory.extend({
   },
 
   withZip: trait({
-    afterCreate(model) {
-      model.createZipCode();
+    afterCreate(model, server) {
+      const zipCode = server.create('zipCode', { addressIds: [model.id] });
+
+      model.zipCode = zipCode;
+
+      model.save();
     }
   })
 });

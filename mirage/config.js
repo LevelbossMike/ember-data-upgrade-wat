@@ -26,4 +26,13 @@ export default function() {
 
   this.get('/posts');
   this.get('/posts/:id');
+
+  this.get('/authors');
+  this.get('/authors/:id');
+
+  this.get('/addresses');
+  this.get('/addresses/:id');
+
+  this.get('/zip-codes');
+  this.get('/zip-codes/:id');
 }

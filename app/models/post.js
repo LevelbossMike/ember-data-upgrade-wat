@@ -9,5 +9,7 @@ export default DS.Model.extend({
   zipCode: readOnly('author.address.zipCode'),
 
   title: attr('string'),
-  text: attr('string')
+  text: attr('string'),
+
+  code: readOnly('zipCode.code')
 });
