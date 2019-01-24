@@ -3,5 +3,7 @@
 {{outlet}}
 
 {{#each model as |post|}}
-  <div>{{post.id}} - {{post.title}} - {{post.code}}</div>
+  <div data-test-post>
+    {{post.id}} - {{post.title}} - {{post.code}}
+  </div>
 {{/each}}
