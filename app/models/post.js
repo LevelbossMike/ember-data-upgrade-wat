@@ -4,12 +4,11 @@ import { belongsTo } from 'ember-data/relationships';
 import attr from 'ember-data/attr';
 
 export default DS.Model.extend({
-  author: belongsTo(),
-
-  zipCode: readOnly('author.address.zipCode'),
+  author: belongsTo({ async: false }),
 
   title: attr('string'),
   text: attr('string'),
 
+  zipCode: readOnly('author.address.zipCode'),
   code: readOnly('zipCode.code')
 });
