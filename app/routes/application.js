@@ -2,6 +2,6 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model() {
-    return this.store.findAll('post', { include: 'author.address.zip-code'});
+    return this.store.loadAll('post', { include: 'author.address.zip-code'});
   }
 });
