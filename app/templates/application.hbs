@@ -2,8 +2,15 @@
 
 {{outlet}}
 
-{{#each model as |post|}}
+{{#each posts as |post|}}
   <div data-test-post>
     {{post.id}} - {{post.title}} - {{post.code}} - {{post.zipCodeId}}
   </div>
 {{/each}}
+
+<button data-test-cache-posts onclick={{action "cachePosts" posts}}>
+  Cache posts
+</button>
+<div>
+  Cached posts: {{postsCache.itemsCount}}
+</div>
